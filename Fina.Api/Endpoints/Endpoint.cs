@@ -11,8 +11,8 @@ namespace Fina.Api.Endpoints
             var endpoints = app.MapGroup("");
 
             endpoints.MapGroup("/")
-                .WithTags("Health Check")
-                .MapGet("/", () => new { message = "OK" });
+                     .WithTags("Health Check")
+                     .MapGet("/", () => new { message = "OK" });
 
 
             endpoints.MapGroup("v1/categories")
@@ -33,7 +33,7 @@ namespace Fina.Api.Endpoints
         }
 
         private static IEndpointRouteBuilder MapEndpoint<TEndpoint>(this IEndpointRouteBuilder app)
-            where TEndpoint : IEndpoint
+                 where TEndpoint : IEndpoint
         {
             TEndpoint.Map(app);
             return app;
